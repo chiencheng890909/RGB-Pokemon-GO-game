@@ -4,7 +4,7 @@
 Map::Map()
 {
 	LoadMap();
-	//ÀË´úmap¤º­ş¸Ì¥i¨«(0)¡A­ş¸Ì¤£¥i¨«(1)
+	//æª¢æ¸¬mapå…§å“ªè£¡å¯èµ°(0)ï¼Œå“ªè£¡ä¸å¯èµ°(1)
 	CM = new int* [map.size()]();
 	for (unsigned int i = 0; i < map.size(); i++) {
 		CM[i] = new int[map[i].length()]();
@@ -30,7 +30,7 @@ Map::Map()
 void Map::LoadMap()
 {
 	string Input;
-	ifstream inFile("C:/Users/user/Desktop/C++¹ê²ß±MÃD/C++¹ê²ß±MÃD/termproj/assets/yzumap.txt", ios::in);
+	ifstream inFile("termproj/assets/yzumap.txt", ios::in);
 	while (getline(inFile,Input,'\n')) {
 		map.push_back(Input);
 		Input.clear();
