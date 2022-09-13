@@ -60,7 +60,7 @@ double pokemonData::GetCoefficientofType(int i, int j)
 }
 
 void pokemonData::ReadIcons(){
-	string Location = "C:/Users/user/Desktop/C++¹ê²ß±MÃD/C++¹ê²ß±MÃD/termproj/assets/icons/color/";
+	string Location = "termproj/assets/icons/color/";
 	string Type = ".txt";
 	string Num = "001";
 	string Read;
@@ -69,15 +69,15 @@ void pokemonData::ReadIcons(){
 		vector <Icon> New;
 		Icons.push_back(New);
 		Read = "";
-		ifstream inFile(Location + Num + Type, ios::in);//ÅªÀÉ
+		ifstream inFile(Location + Num + Type, ios::in);//è®€æª”
 
-		if (!inFile)//¥¼Åª¨ú¨ìÀÉ®×¡AÅã¥Ü¿ù»~
+		if (!inFile)//æœªè®€å–åˆ°æª”æ¡ˆï¼Œé¡¯ç¤ºéŒ¯èª¤
 		{
 			std::cout << "File could not be opened" << endl;
 			system("pause");
 			exit(1);
 		}
-		while (!inFile.eof()){//¤À§OÅª¶i¦U¦ì¸m
+		while (!inFile.eof()){//åˆ†åˆ¥è®€é€²å„ä½ç½®
 			getline(inFile, Read, '[');
 			Icons[i].push_back(Icon(Read));
 		}
@@ -94,12 +94,12 @@ void pokemonData::ReadIcons(){
 
 void pokemonData::ReadTypes()
 {
-	string Location = "C:/Users/user/Desktop/C++¹ê²ß±MÃD/C++¹ê²ß±MÃD/termproj/assets/type.csv";
+	string Location = "termproj/assets/type.csv";
 	string Read;
 	double read;
 	ifstream inFile(Location, ios::in);
 
-	if (!inFile)//¥¼Åª¨ú¨ìÀÉ®×¡AÅã¥Ü¿ù»~
+	if (!inFile)//æœªè®€å–åˆ°æª”æ¡ˆï¼Œé¡¯ç¤ºéŒ¯èª¤
 	{
 		std::cout << "File could not be opened" << endl;
 		system("pause");
@@ -134,11 +134,11 @@ void pokemonData::ReadTypes()
 
 void pokemonData::ReadInformations()
 {
-	string Location = "C:/Users/user/Desktop/C++¹ê²ß±MÃD/C++¹ê²ß±MÃD/termproj/assets/pokemons.csv";
+	string Location = "termproj/assets/pokemons.csv";
 	string Read, Name, Type;
 	int HP, ATK, DEF, Speed, Ability;
 	ifstream inFile(Location, ios::in);
-	if (!inFile)//¥¼Åª¨ú¨ìÀÉ®×¡AÅã¥Ü¿ù»~
+	if (!inFile)//æœªè®€å–åˆ°æª”æ¡ˆï¼Œé¡¯ç¤ºéŒ¯èª¤
 	{
 		std::cout << "File could not be opened" << endl;
 		system("pause");
@@ -250,31 +250,31 @@ void pokemon::PrintIcon(int X,int Y)
 void pokemon::PrintInformation(int X, int Y)
 {
 	gotoxy(X, Y);
-	std::cout << "¦WºÙ¡G" << TheInformation.getName();
+	std::cout << "åç¨±ï¼š" << TheInformation.getName();
 	Y++;
 
 	gotoxy(X, Y);
-	std::cout << "Äİ©Ê¡G" << TheInformation.getType();
+	std::cout << "å±¬æ€§ï¼š" << TheInformation.getType();
 	Y++;
 
 	gotoxy(X, Y);
-	std::cout << "¦å¶q¡G";
+	std::cout << "è¡€é‡ï¼š";
 	if (TheInformation.getHP() >= 0 && TheInformation.getHP() < 10)
-		cout << "0" << TheInformation.getHP() << "/" << TheInformation.getMaxHP() << "  " << "§ğÀ»¤O¡G" << TheInformation.getATK();
+		cout << "0" << TheInformation.getHP() << "/" << TheInformation.getMaxHP() << "  " << "æ”»æ“ŠåŠ›ï¼š" << TheInformation.getATK();
 	else {
-		cout << TheInformation.getHP() << "/" << TheInformation.getMaxHP() << "  " << "§ğÀ»¤O¡G" << TheInformation.getATK();
+		cout << TheInformation.getHP() << "/" << TheInformation.getMaxHP() << "  " << "æ”»æ“ŠåŠ›ï¼š" << TheInformation.getATK();
 	}
 	Y++;
 
 	gotoxy(X, Y);
-	std::cout << "¨¾¿m¤O¡G" << TheInformation.getDEF() << "  " << "³t«×¡G" << TheInformation.getSpeed() << "  " << "§Ş¯à¡G" << Abilities[TheInformation.getAbility()];
+	std::cout << "é˜²ç¦¦åŠ›ï¼š" << TheInformation.getDEF() << "  " << "é€Ÿåº¦ï¼š" << TheInformation.getSpeed() << "  " << "æŠ€èƒ½ï¼š" << Abilities[TheInformation.getAbility()];
 	Y++;
 }
 
 int pokemon::theDamage(int ATK, int DEF, string A, string B)
 {
-	int x = 0;//²Ä¤@°¦Ä_¥i¹ÚªºÄİ©Ê
-	int y = 0;//²Ä¤G°¦Ä_¥i¹ÚªºÄİ©Ê
+	int x = 0;//ç¬¬ä¸€éš»å¯¶å¯å¤¢çš„å±¬æ€§
+	int y = 0;//ç¬¬äºŒéš»å¯¶å¯å¤¢çš„å±¬æ€§
 
 	for (int i = 0; i < 18; i++) {
 		if (AllofTypes[i] == A)
@@ -282,9 +282,9 @@ int pokemon::theDamage(int ATK, int DEF, string A, string B)
 		if (AllofTypes[i] == B)
 			y = i;
 	}
-	//®³¨ú«Y¼Æ
+	//æ‹¿å–ä¿‚æ•¸
 	double Coefficient = GetCoefficientofType(x, y);
-	//¦^¶Ç¥[¦¨«áªº¶Ë®`
+	//å›å‚³åŠ æˆå¾Œçš„å‚·å®³
 	return (Coefficient * (ATK - DEF));
 }
 
@@ -296,14 +296,14 @@ double pokemon::getCounterAttack(int x)
 void pokemon::Attack(pokemon& m)
 {
 	int x = rand() % 5 + 1;
-	//hitRateªì³]¬°0¡A©Ò¥H°£«D¦³¯S®í§Ş¯à¡A¤£µM¥²¤¤¡C
+	//hitRateåˆè¨­ç‚º0ï¼Œæ‰€ä»¥é™¤éæœ‰ç‰¹æ®ŠæŠ€èƒ½ï¼Œä¸ç„¶å¿…ä¸­ã€‚
 	if (x > m.gethitRate()) {
 		int TheDamage = theDamage(getATK(), m.getDEF(), getType(), m.getType());
 		m.setHP(m.getHP() - (TheDamage));
 		setHP(getHP() - m.getCounterAttack(TheDamage));
 	}
 	else
-		std::cout << m.getName() << "°jÁ×¤F¥»¦¸§ğÀ»¡C";
+		std::cout << m.getName() << "è¿´é¿äº†æœ¬æ¬¡æ”»æ“Šã€‚";
 }
 
 
