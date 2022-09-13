@@ -8,5 +8,7 @@ wasd：上左下右
 隨不同地區會有機率與對應屬性的寶可夢相遇，擊敗7位道館館長即可勝利。
 
 ### 遊戲畫面
+地圖畫面：
 ![alt text](gameimages/地圖.png)
+對戰畫面：
 ![alt text](gameimages/對戰.png)
